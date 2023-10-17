@@ -8,5 +8,7 @@ namespace Movie_Api.Repository
         Task<Moveis> GetByIdMoveisAsync(int moveisId);
         Task<Moveis> AddMoveisAsync(Moveis moveis);
         Task<IEnumerable<Moveis>> GetAllMoveisAsync();
+        Task<bool> DelateMovieAsync(int id);
+        Task<bool> GetImageAsync(int id);
     }
 }
