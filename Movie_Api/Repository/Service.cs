@@ -29,6 +29,11 @@ namespace Movie_Api.Repository
 
         }
 
+        public Task<bool> DelateMovieAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Moveis>> GetAllMoveisAsync()
         {
             var res = await _movieDb.Moveiss.ToListAsync();
@@ -43,6 +48,11 @@ namespace Movie_Api.Repository
         {
             var moveis = await _movieDb.Moveiss.FirstOrDefaultAsync(p => p.Id == moveisId);
             return moveis;
+        }
+
+        public Task<bool> GetImageAsync(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<Moveis> SetImageAsync(int moveisId, IFormFile file)
