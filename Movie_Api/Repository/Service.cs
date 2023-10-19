@@ -29,9 +29,17 @@ namespace Movie_Api.Repository
 
         }
 
-        public Task<bool> DelateMovieAsync(int id)
+        public async Task<bool> DelateMovieAsync(int movieId)
         {
-            throw new NotImplementedException();
+            var res = await _movieDb.Moveiss.FirstOrDefaultAsync(p => p.Id == movieId);
+            if (res == null)
+            {
+                return false;
+
+            }
+            _movieDb.Moveiss.Remove(res);
+            _movieDb.SaveChanges();
+            return true;
         }
 
         public async Task<IEnumerable<Moveis>> GetAllMoveisAsync()

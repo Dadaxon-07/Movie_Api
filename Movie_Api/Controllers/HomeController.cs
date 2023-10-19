@@ -39,10 +39,9 @@ namespace Movie_Api.Controllers
 
         [HttpDelete]
 
-        public async Task<IActionResult> MoviyDalate(int id)
+        public async Task<IActionResult> MoviDelete(int id)
         {
-            var res = await _service.GetImageAsync(id);
-            bool res1 = await _service.DelateMovieAsync(id);
+            var res = await _service.DelateMovieAsync(id);
             if (res == false)
             {
                 return NotFound();
